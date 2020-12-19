@@ -1,15 +1,15 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import Head from '@docusaurus/Head';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Image from '@theme/IdealImage';
-import Footer from '@theme/Footer';
-import styles from './index.module.css';
-import {Live} from '../components/live';
-import {Contact} from '../components/contact';
-import {Feature} from '../components/feature';
-import {Highlights} from '../components/highlights';
-import {Nav} from '../components/nav';
+import React from "react";
+import Link from "@docusaurus/Link";
+import Head from "@docusaurus/Head";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Image from "@theme/IdealImage";
+import Footer from "@theme/Footer";
+import styles from "./index.module.css";
+import { Live } from "../components/live";
+import { Contact } from "../components/contact";
+import { Feature } from "../components/feature";
+import { Highlights } from "../components/highlights";
+import { Nav } from "../components/nav";
 
 const Header = () => {
   return (
@@ -36,8 +36,8 @@ const Header = () => {
 
 function Index() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  const {title, tagline, url, favicon} = siteConfig;
+  const { siteConfig = {} } = context;
+  const { title, tagline, url, favicon } = siteConfig;
 
   const ogImage = `${url}/img/github/app-action.jpg`;
 
@@ -67,24 +67,19 @@ function Index() {
       <Highlights
         highlights={[
           {
-            title: 'Works with GitHub',
+            title: "Works with GitHub",
             text: (
               <p>
                 Start using our <strong>GitHub Application</strong>, setup
                 everything within few clicks.
                 <br />
-                Using GitHub workflows? Try out the{' '}
+                Using GitHub workflows? Try out the{" "}
                 <strong>GitHub Action</strong>!
               </p>
             ),
             link: (
               <div className={styles.indexGithubLinks}>
-                <Link
-                  to="/docs/products/github"
-                  title="How to use GraphQL Inspector in GitHub repository"
-                >
-                  Learn more
-                </Link>
+                Learn more
                 <br />
                 <a href="/install" title="Use GitHub Application">
                   Install Application
@@ -96,62 +91,14 @@ function Index() {
             ),
             img: (
               <Image
-                img={require('../../static/img/illustrations/github.png')}
+                img={require("../../static/img/illustrations/github.png")}
                 alt="GitHub App and Action"
                 loading="lazy"
               />
-            ),
+            )
           },
           {
-            title: 'Continous Integrations',
-            text: (
-              <p>
-                GraphQL Inspector can be used in any Continous Integration
-                service.Use our modularized, CI suited version of CLI.
-              </p>
-            ),
-            link: (
-              <Link
-                to="/docs/products/ci"
-                title="How to use GraphQL Inspector in CI/CD"
-              >
-                Learn more
-              </Link>
-            ),
-            img: (
-              <Image
-                img={require('../../static/img/illustrations/result.png')}
-                alt="Continous Integrations"
-                loading="lazy"
-              />
-            ),
-          },
-          {
-            title: 'Command-Line',
-            text: (
-              <p>
-                <strong>GraphQL Inspector offers a CLI</strong> that lets you
-                analyze your GraphQL API but also client-side applications.
-              </p>
-            ),
-            link: (
-              <Link
-                to="/docs/essentials/diff"
-                title="Learn how to use GraphQL Inspector CLI"
-              >
-                Lean more
-              </Link>
-            ),
-            img: (
-              <Image
-                img={require('../../static/img/illustrations/typewriter.png')}
-                alt="Command-Line"
-                loading="lazy"
-              />
-            ),
-          },
-          {
-            title: 'Entirely Open-Source',
+            title: "Entirely Open-Source",
             text: (
               <p>
                 Our codebase is publicly available on GitHub and it's easy to
@@ -168,19 +115,19 @@ function Index() {
             ),
             img: (
               <Image
-                img={require('../../static/img/illustrations/hacker-mindset.png')}
+                img={require("../../static/img/illustrations/hacker-mindset.png")}
                 alt="Entirely Open-Source"
                 loading="lazy"
               />
-            ),
-          },
+            )
+          }
         ]}
       />
 
       <Feature
         img={
           <Image
-            img={require('../../static/img/ui/features/annotations.png')}
+            img={require("../../static/img/ui/features/annotations.png")}
             alt="Annotations"
             loading="lazy"
           />
@@ -204,7 +151,7 @@ function Index() {
         reversed={true}
         img={
           <Image
-            img={require('../../static/img/ui/features/notifications.png')}
+            img={require("../../static/img/ui/features/notifications.png")}
             alt="Notifications"
             loading="lazy"
           />
@@ -214,8 +161,8 @@ function Index() {
           <>
             <p>Stay up to date with changes in GraphQL Schema.</p>
             <p>
-              Receive notifications on <strong>Slack</strong>,{' '}
-              <strong>Discord</strong> or even via <strong>WebHooks</strong>{' '}
+              Receive notifications on <strong>Slack</strong>,{" "}
+              <strong>Discord</strong> or even via <strong>WebHooks</strong>{" "}
               every time new changes are introduced.
             </p>
           </>
@@ -225,7 +172,7 @@ function Index() {
       <Feature
         img={
           <Image
-            img={require('../../static/img/ui/features/schema-check.png')}
+            img={require("../../static/img/ui/features/schema-check.png")}
             alt="Schema Validation"
             loading="lazy"
           />
@@ -249,7 +196,7 @@ function Index() {
         reversed={true}
         img={
           <Image
-            img={require('../../static/img/ui/features/intercept.png')}
+            img={require("../../static/img/ui/features/intercept.png")}
             alt="Intercept changes via HTTP"
             loading="lazy"
           />
