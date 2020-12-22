@@ -113,6 +113,12 @@ module.exports = {
         quality: 100
       }
     ],
-    path.join(__dirname, "/plugins/monaco-editor")
+    path.join(__dirname, "/plugins/monaco-editor"),
+    [
+      require.resolve("docusaurus-gtm-plugin"),
+      {
+        id: "G-ZBQ0VZFXLH"
+      }
+    ]
   ]
 };

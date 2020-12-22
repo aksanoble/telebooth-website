@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-inspector/website",
+  "name": "telebooth-website",
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -10,8 +10,8 @@
     "@docusaurus/core": "2.0.0-alpha.66",
     "@docusaurus/plugin-ideal-image": "2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
-    "@graphql-inspector/core": "2.3.0",
     "classnames": "2.2.6",
+    "docusaurus-gtm-plugin": "^0.0.2",
     "fetch-ponyfill": "7.0.0",
     "globby": "11.0.1",
     "graphql": "15.4.0",

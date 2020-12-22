@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {MonacoDiffEditor} from 'react-monaco-editor';
-import {buildSchema} from 'graphql';
-import {diff} from '@graphql-inspector/core';
-import styles from './index.module.css';
-import FlipMove from 'react-flip-move';
+import React, { useState, useEffect } from "react";
+import { MonacoDiffEditor } from "react-monaco-editor";
+import { buildSchema } from "graphql";
+import styles from "./index.module.css";
+import FlipMove from "react-flip-move";
 
-import Change from './Change';
+import Change from "./Change";
 
 const oldSchemaString = `
   type Post {
@@ -59,9 +58,9 @@ export default function Diff() {
         onChange={setCode}
         options={{
           codeLens: false,
-          lineNumbers: 'off',
+          lineNumbers: "off",
           minimap: false,
-          originalEditable: false,
+          originalEditable: false
         }}
       />
       <FlipMove
