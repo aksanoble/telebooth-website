@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import {GitHub, Twitter, Linkedin} from 'react-feather';
+import React from "react";
+import Link from "@docusaurus/Link";
+import { GitHub, Twitter } from "react-feather";
 
-export const Nav = ({link}) => {
+export const Nav = ({ link }) => {
   return (
     <div id="main-nav">
       <a href="/" className="logo">
@@ -10,8 +10,8 @@ export const Nav = ({link}) => {
       </a>
       <div className="links">
         <div className="sep" />
-        <Link to="/docs" title="GraphQL Inspector - Documentation">
-          Documentation
+        <Link to="/docs" title="Telebooth setup">
+          Setup
         </Link>
         <div className="sep" />
         <a
@@ -23,19 +23,13 @@ export const Nav = ({link}) => {
         </a>
         <div className="social-links">
           <a
-            href="https://github.com/kamilkisiela/graphql-inspector"
+            href="https://github.com/aksanoble/telebooth"
             title="GitHub Repository"
           >
             <GitHub />
           </a>
-          <a href="https://twitter.com/kamilkisiela" title="Twitter Profile">
+          <a href="https://twitter.com/aksanoble" title="Twitter Profile">
             <Twitter />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/the-guild-software"
-            title="LinkedIn Profile"
-          >
-            <Linkedin />
           </a>
         </div>
       </div>

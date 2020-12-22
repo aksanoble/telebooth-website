@@ -1,71 +1,74 @@
-import React, {useState, useCallback, useEffect} from 'react';
-import Image from '@theme/IdealImage';
-import {Send} from 'react-feather';
-import styles from './contact.module.css';
+import React, { useState, useCallback, useEffect } from "react";
+import Image from "@theme/IdealImage";
+import { Send } from "react-feather";
+import styles from "./contact.module.css";
 
-import {useMutation} from '../hooks/use-graphql';
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
-function ContactForm({className}) {
-  const [email, setEmail] = useState();
-  const [result, mutate] = useMutation(
-    `mutation sayHi($email: String!, $project: String!) { sayHi(email: $email, project: $project) { ok } }`,
-  );
-  const onSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-      mutate({email, project: 'GRAPHQL_INSPECTOR'});
-    },
-    [email, mutate],
-  );
-  const onChange = useCallback(
-    (event) => {
-      if (!result.loading) {
-        setEmail(event.target.value);
-      }
-    },
-    [setEmail, result.loading],
-  );
+const ContactForm = () => {
+  const [contactDetails, setContactDetails] = useState({});
+  const target = "/";
+  const handleSubmit = e => {
+    fetch(`${proxy}${target}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", contactDetails })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
-  useEffect(() => {
-    if (result.complete) {
-      setEmail('');
-    }
-  }, [result.complete, setEmail]);
+    e.preventDefault();
+  };
 
+  const handleChange = e => {
+    setContactDetails(
+      Object.assign(contactDetails, { [e.target.name]: e.target.value })
+    );
+  };
   return (
-    <div className={className}>
-      <form className={styles.contactForm} onSubmit={onSubmit}>
-        <input
-          className={styles.contactInput}
-          disabled={result.loading}
-          type="text"
-          value={email}
-          onChange={onChange}
-          placeholder="Type your email here"
-        />
-        <button className={styles.contactSubmit} type="submit">
-          <Send />
-        </button>
-        {result.error && (
-          <div className={`${styles.contactStatus} ${styles.error}`}>
-            Something went wrong, so please contact us directly on{' '}
-            <a
-              className={styles.contactDirectly}
-              href="mailto:kamil.kisiela@gmail.com"
-            >
-              kamil.kisiela@gmail.com
-            </a>
-          </div>
-        )}
-        {result.data && (
-          <div className={`${styles.contactStatus} ${styles.success}`}>
-            We'll contact you soon!
-          </div>
-        )}
-      </form>
-    </div>
+    <form data-netlify="true" onSubmit={handleSubmit}>
+      <p>
+        <label>
+          Your Name:{" "}
+          <input
+            type="text"
+            name="name"
+            value={contactDetails.name}
+            onChange={handleChange}
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your Email:{" "}
+          <input
+            type="email"
+            name="email"
+            value={contactDetails.email}
+            onChange={handleChange}
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message:{" "}
+          <textarea
+            name="message"
+            value={contactDetails.message}
+            onChange={handleChange}
+          />
+        </label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
   );
-}
+};
 
 export const Contact = () => {
   return (
@@ -76,9 +79,8 @@ export const Contact = () => {
             <h3 className={styles.contactTitle}>Get in touch!</h3>
             <div className={styles.contactLimitContainer}>
               <p className={styles.contactDetails}>
-                Need help? Want to start using GraphQL Inspector?
-                <br /> We would love to help you and hear how you use GraphQL
-                Inspector today!
+                Need help in setting up or need a managed service?
+                <br /> We would love to help you and hear how you use Telebooth.
               </p>
               <div className="contact-wrapper">
                 <ContactForm />
@@ -87,7 +89,7 @@ export const Contact = () => {
           </div>
           <div className={styles.contactMailBox}>
             <Image
-              img={require('../../static/img/illustrations/mail-box.png')}
+              img={require("../../static/img/illustrations/mail-box.png")}
               alt="Mail Box"
               loading="lazy"
             />

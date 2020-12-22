@@ -16,18 +16,19 @@ const Header = () => {
     <div id="main-header">
       <div className="container">
         <h1>
-          <span>Bulletproof</span> your GraphQL
+          <span>The telegram bot client.</span>
+          <br />
         </h1>
         <h2>
-          Validate schemas and detect changes. Receive schema change
-          notifications. Keep Operations and Fragments consistent.
+          Simple web interface to send and receive messages as your Telegram
+          bot.
         </h2>
         <Link
           to="/docs"
           className="main-button"
           title="Documentation | GraphQL Inspector"
         >
-          Documentation
+          GET STARTED
         </Link>
       </div>
     </div>
@@ -67,38 +68,23 @@ function Index() {
       <Highlights
         highlights={[
           {
-            title: "Works with GitHub",
+            title: "Own your data",
             text: (
               <p>
-                Start using our <strong>GitHub Application</strong>, setup
-                everything within few clicks.
-                <br />
-                Using GitHub workflows? Try out the{" "}
-                <strong>GitHub Action</strong>!
+                Directly create a new bot with Telegram and connect with
+                Telebooth. No vendor lock-in. You fully own your bot identity as
+                well as all of your contacts and messages.
               </p>
-            ),
-            link: (
-              <div className={styles.indexGithubLinks}>
-                Learn more
-                <br />
-                <a href="/install" title="Use GitHub Application">
-                  Install Application
-                </a>
-                <a href="/action" title="Use GitHub Action">
-                  Use Action
-                </a>
-              </div>
             ),
             img: (
               <Image
                 img={require("../../static/img/illustrations/github.png")}
                 alt="GitHub App and Action"
-                loading="lazy"
               />
             )
           },
           {
-            title: "Entirely Open-Source",
+            title: "Self-host",
             text: (
               <p>
                 Our codebase is publicly available on GitHub and it's easy to
@@ -107,8 +93,31 @@ function Index() {
             ),
             link: (
               <a
-                href="https://github.com/kamilkisiela/graphql-inspector"
-                title="Visit GraphQL Inspector repository"
+                href="https://telebooth.kanthi.io/docs"
+                title="Telebooth setup guide"
+              >
+                Setup
+              </a>
+            ),
+            img: (
+              <Image
+                img={require("../../static/img/illustrations/hacker-mindset.png")}
+                alt="Entirely Open-Source"
+              />
+            )
+          },
+          {
+            title: "Free and Open Source",
+            text: (
+              <p>
+                Our codebase is publicly available on GitHub and it's easy to
+                deploy and use your GitHub Application.
+              </p>
+            ),
+            link: (
+              <a
+                href="https://github.com/aksanoble/telebooth"
+                title="Visit Telebooth repository"
               >
                 Source code
               </a>
@@ -117,7 +126,6 @@ function Index() {
               <Image
                 img={require("../../static/img/illustrations/hacker-mindset.png")}
                 alt="Entirely Open-Source"
-                loading="lazy"
               />
             )
           }
@@ -132,16 +140,12 @@ function Index() {
             loading="lazy"
           />
         }
-        title="In-Code Annotations"
+        title="Familiar interface"
         text={
           <>
             <p>
-              GitHub offers <strong>in-code annotations</strong> and GraphQL
-              Inspector, both App and Action enables you do use them.
-            </p>
-            <p>
-              Nice and clean way to understand what have really changed and how
-              it looked before and after.
+              View and manage all incoming messages to your bot with the
+              familiar web ingterface.
             </p>
           </>
         }
@@ -156,61 +160,11 @@ function Index() {
             loading="lazy"
           />
         }
-        title="Notifications"
+        title="Real-time"
         text={
           <>
-            <p>Stay up to date with changes in GraphQL Schema.</p>
-            <p>
-              Receive notifications on <strong>Slack</strong>,{" "}
-              <strong>Discord</strong> or even via <strong>WebHooks</strong>{" "}
-              every time new changes are introduced.
-            </p>
-          </>
-        }
-      />
-
-      <Feature
-        img={
-          <Image
-            img={require("../../static/img/ui/features/schema-check.png")}
-            alt="Schema Validation"
-            loading="lazy"
-          />
-        }
-        title="Detect Changes"
-        text={
-          <>
-            <p>
-              <strong>Prevent breaking changes</strong> on Pull Request and Push
-              levels.
-            </p>
-            <p>
-              Get a fully detailed summary with a list of proposed changes to
-              the GraphQL Schema and decide whether or not to implement them.
-            </p>
-          </>
-        }
-      />
-
-      <Feature
-        reversed={true}
-        img={
-          <Image
-            img={require("../../static/img/ui/features/intercept.png")}
-            alt="Intercept changes via HTTP"
-            loading="lazy"
-          />
-        }
-        title="Intercept via HTTP"
-        text={
-          <>
-            <p>
-              On every schema checking, your http endpoint receives a list of
-              changes, list of related Pull Request or a commit SHA.
-            </p>
-            <p>
-              <strong>Decide about the status of Pull Request.</strong>
-            </p>
+            Messages instantly delivered via the Telegram Bot API while saving a
+            copy in your database.
           </>
         }
       />

@@ -1,146 +1,118 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  title: 'GraphQL Inspector',
-  tagline:
-    'Validate schemas, detect changes, receive schema change notifications on Slack and Discord. Validate documents, find similar types, get schema coverage.',
+  title: "Telebooth",
+  tagline: "Web interface to send and receive messages as your Telegram bot.",
 
-  url: 'https://graphql-inspector.com',
-  baseUrl: '/',
-  favicon: 'img/favicon/favicon.png',
+  url: "https://telebooth.kanthi.io",
+  baseUrl: "/",
+  favicon: "img/favicon/favicon.png",
 
-  organizationName: 'kamilkisiela',
-  projectName: 'graphql-inspector',
+  organizationName: "aksanoble",
+  projectName: "Telebooth",
 
   themeConfig: {
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: true
     },
     sidebarCollapsible: true,
-    image: 'img/github/app-action.jpg',
-    announcementBar: {
-      id: 'support_us',
-      content: [
-        '<strong>We are working on v3.0</strong>. Contribute to its <a target="_blank" rel="noopener noreferrer" href="https://github.com/kamilkisiela/graphql-inspector/discussions/1371">roadmap</a> by suggesting features.',
-        'If you like GraphQL Inspector give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/kamilkisiela/graphql-inspector/">GitHub</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/sponsors/kamilkisiela">consider supporting the project</a>!',
-      ].join(' '),
-      backgroundColor: '#292d3e',
-      textColor: '#bfc7d5',
-    },
+    image: "img/github/app-action.jpg",
+    announcementBar: {},
     navbar: {
-      title: 'GraphQL Inspector',
+      title: "Telebooth",
       logo: {
-        alt: 'GraphQL Inspector Logo',
-        src: 'img/just-logo.svg',
+        alt: "Telebooth Logo",
+        src: "img/just-logo.svg"
       },
       items: [
         {
-          to: '/docs',
-          activeBasePath: '/docs',
-          label: 'Documentation',
-          position: 'right',
+          to: "/docs",
+          activeBasePath: "/docs",
+          label: "Documentation",
+          position: "right"
         },
         {
-          href: 'https://github.com/kamilkisiela/graphql-inspector',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+          href: "https://github.com/aksanoble/telebooth",
+          label: "GitHub",
+          position: "right"
+        }
+      ]
     },
     footer: {
-      style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Kamil Kisiela. All rights reserved.`,
+      style: "dark",
+      copyright: `Copyright © ${new Date().getFullYear()} All rights reserved.`,
       logo: {
-        alt: 'GraphQL Inspector Logo',
-        src: 'img/logo-white.svg',
+        alt: "GraphQL Inspector Logo",
+        src: "img/logo-white.svg"
       },
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Introduction',
-              to: 'docs/index',
+              label: "Introduction",
+              to: "docs/index"
             }
-          ],
+          ]
         },
         {
-          title: 'Social',
+          title: "Social",
           items: [
             {
-              label: 'Blog',
-              href: 'https://the-guild.dev/blog',
+              label: "GitHub",
+              href: "https://github.com/aksanoble/telebooth"
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/kamilkisiela/graphql-inspector',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/kamilkisiela',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/the-guild-software',
-            },
-          ],
-        },
-      ],
+              label: "Twitter",
+              href: "https://twitter.com/aksanoble"
+            }
+          ]
+        }
+      ]
     },
     googleAnalytics: {
-      trackingID: 'UA-125180910-2',
-    },
-    algolia: {
-      apiKey: 'c81d6a17b6d40971f230c0d79b03ff23',
-      indexName: 'graphql-inspector',
-      algoliaOptions: {},
-    },
+      trackingID: ""
+    }
   },
   scripts: [
     {
-      src: '/js/scroll-to.js',
-    },
-    {
-      src: 'https://the-guild.dev/static/banner.js',
-      async: true,
-      defer: true,
-    },
+      src: "/js/scroll-to.js"
+    }
   ],
   stylesheets: [
-    'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap',
+    "https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
   ],
   presets: [
     [
-      require.resolve('@docusaurus/preset-classic'),
+      require.resolve("@docusaurus/preset-classic"),
       {
         docs: {
-          path: 'docs',
-          include: ['**/*.md', '**/*.mdx'],
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/kamilkisiela/graphql-inspector/edit/master/website/',
+          path: "docs",
+          include: ["**/*.md", "**/*.mdx"],
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: "https://github.com/aksanoble/telebooth-website/"
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css")
         },
         sitemap: {
           cacheTime: 600 * 1001, // 600 sec - cache purge period
-          changefreq: 'weekly',
-          priority: 0.5,
-        },
-      },
-    ],
+          changefreq: "weekly",
+          priority: 0.5
+        }
+      }
+    ]
   ],
   plugins: [
     [
-      require.resolve('@docusaurus/plugin-ideal-image'),
+      require.resolve("@docusaurus/plugin-ideal-image"),
       {
         size: 800,
         max: 800,
         min: 200,
-        quality: 100,
-      },
+        quality: 100
+      }
     ],
-    path.join(__dirname, '/plugins/monaco-editor')
-  ],
+    path.join(__dirname, "/plugins/monaco-editor")
+  ]
 };
