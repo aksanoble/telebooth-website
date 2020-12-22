@@ -13,7 +13,7 @@ const ContactForm = () => {
   const [contactDetails, setContactDetails] = useState({});
   const target = "/";
   const handleSubmit = e => {
-    fetch(`${proxy}${target}`, {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", contactDetails })
