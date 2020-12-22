@@ -30,7 +30,7 @@ const ContactForm = () => {
     );
   };
   return (
-    <form data-netlify="true" onSubmit={handleSubmit}>
+    <form name="contact" data-netlify="true" onSubmit={handleSubmit}>
       <p>
         <label>
           Your Name:{" "}
