@@ -71,7 +71,7 @@ module.exports = {
       ]
     },
     googleAnalytics: {
-      trackingID: ""
+      trackingID: "G-ZBQ0VZFXLH"
     }
   },
   scripts: [
