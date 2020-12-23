@@ -21,7 +21,7 @@ a {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 button {
@@ -190,7 +190,7 @@ button {
 }
 
 .nav-site li:not(:last-child) a::after {
-  content: '';
+  content: "";
   margin: 0 0 0 20px;
   width: 3px;
   height: 3px;

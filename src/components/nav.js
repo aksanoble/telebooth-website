@@ -6,7 +6,7 @@ export const Nav = ({ link }) => {
   return (
     <div id="main-nav">
       <a href="/" className="logo">
-        <img src="/img/logo.svg" alt="GraphQL Inspector Logo" />
+        Telebooth
       </a>
       <div className="links">
         <div className="sep" />

@@ -41,10 +41,6 @@ module.exports = {
     footer: {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} All rights reserved.`,
-      logo: {
-        alt: "GraphQL Inspector Logo",
-        src: "img/logo-white.svg"
-      },
       links: [
         {
           title: "Docs",
