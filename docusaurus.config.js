@@ -2,7 +2,8 @@ const path = require("path");
 
 module.exports = {
   title: "Telebooth",
-  tagline: "Web interface to send and receive messages as your Telegram bot.",
+  tagline:
+    "Create virtual bot identities for your business and interact with your customers. ",
 
   url: "https://telebooth.kanthi.io",
   baseUrl: "/",
