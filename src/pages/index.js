@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Image from "@docusaurus/plugin-ideal-image";
+import Image from "@theme/IdealImage";
 import Footer from "@theme/Footer";
 import styles from "./index.module.css";
 import { Live } from "../components/live";
