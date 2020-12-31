@@ -9,8 +9,16 @@ const encode = data => {
     .join("&");
 };
 
+const INITIAL_STATE = {
+  name: '',
+  email: '',
+  message: ''
+}
+
 const ContactForm = () => {
-  const [contactDetails, setContactDetails] = useState({});
+  const [contactDetails, setContactDetails] = useState(INITIAL_STATE);
+  const [showMsg, setShowMsg] = useState(false);
+
   const target = "/";
   const handleSubmit = e => {
     fetch("/", {
@@ -18,22 +26,32 @@ const ContactForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...contactDetails })
     })
-      .then(() => alert("Success!"))
+      .then(() => {
+        setContactDetails(INITIAL_STATE);
+        setShowMsg(true);
+
+        const timeout = setTimeout(() => {
+          setShowMsg(false);
+          clearTimeout(timeout)
+        }, 5000);
+      })
       .catch(error => alert(error));
 
     e.preventDefault();
   };
 
   const handleChange = e => {
-    setContactDetails(
-      Object.assign(contactDetails, { [e.target.name]: e.target.value })
-    );
+    setContactDetails({
+      ...contactDetails,
+      [e.target.name]: e.target.value
+    });
   };
   return (
-    <form name="contact" data-netlify="true" onSubmit={handleSubmit}>
+    <form name="contact" data-netlify="true" onSubmit={handleSubmit} className='contact-form'>
+      {showMsg ? <p className={styles.successMessage}>Successfully submitted your request.</p> : null}
       <p>
         <label>
-          Your Name:{" "}
+          Your Name
           <input
             type="text"
             name="name"
@@ -44,7 +62,7 @@ const ContactForm = () => {
       </p>
       <p>
         <label>
-          Your Email:{" "}
+          Your Email
           <input
             type="email"
             name="email"
@@ -55,7 +73,7 @@ const ContactForm = () => {
       </p>
       <p>
         <label>
-          Message:{" "}
+          Message
           <textarea
             name="message"
             value={contactDetails.message}
@@ -88,8 +106,8 @@ export const Contact = () => {
             </div>
           </div>
           <div className={styles.contactMailBox}>
-            <Image
-              img={require("../../static/img/illustrations/mail-box.png")}
+            <img
+              src="../../static/img/get-in-touch.svg"
               alt="Mail Box"
               loading="lazy"
             />

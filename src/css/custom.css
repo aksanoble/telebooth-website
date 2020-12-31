@@ -27,6 +27,48 @@ body {
 button {
   --ifm-color-content: #fff;
 }
+.intro-section {
+  width: 50%;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact-form input, textarea {
+  overflow-wrap: break-word;
+  border-radius: 4px;
+  border: 1px solid #d0cfcf;
+  margin-top: 8px;
+  padding: 8px 12px;
+  width: 100%;
+  outline: none;
+  position: relative;
+  appearance: none;
+  transition: all 0.2s ease 0s;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+}
+
+.contact-form button {
+  padding: 10px 24px;
+  border: 1px solid #d0cfcf;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  border-radius: 6px;
+}
+
+.contact-form button:hover {
+  cursor: pointer;
+}
+
+.image-container {
+  padding: 5% 10%;
+  display: flex;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 996px) {
   .menu > button {
@@ -46,6 +88,21 @@ button {
     flex-direction: column;
   }
 
+  .top-section {
+    flex-direction: column;
+  }
+
+  .intro-section {
+    text-align: center;
+    flex: 1;
+    width: 100%;
+  }
+
+  .cover-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
   #main-nav .links {
     padding-top: 25px;
     max-width: 80%;
@@ -63,7 +120,7 @@ button {
 
   #main-header {
     padding-top: 70px;
-    padding-bottom: 350px;
+    /* padding-bottom: 350px; */
   }
 
   #contact-us #main-header {
@@ -219,7 +276,6 @@ body.separateOnPageNav .mainContainer {
 
 body:not(.separateOnPageNav) .mainContainer {
   padding-bottom: 0;
-  background-image: url(/img/ui/cover.svg);
   background-repeat: no-repeat;
   min-height: 100vh;
 }

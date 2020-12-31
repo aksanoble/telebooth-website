@@ -7,11 +7,10 @@ module.exports = {
 
   url: "https://telebooth.kanthi.io",
   baseUrl: "/",
-  favicon: "img/favicon/favicon.png",
+  favicon: "img/favicon/favicon.ico",
 
   organizationName: "aksanoble",
   projectName: "Telebooth",
-
   themeConfig: {
     colorMode: {
       disableSwitch: true
