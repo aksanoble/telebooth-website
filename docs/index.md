@@ -13,11 +13,11 @@ sidebar_label: index
 
 ## Setup Hasura on Heroku
 
-For quick setup we recommend setting up Hasura on Heroku. There's a one-click deploy to Heroku button on the [Hasura GitHub page](https://github.com/hasura/graphql-engine). 
+For quick setup we recommend setting up Hasura on Heroku. There's a one-click deploy to Heroku button on the [Hasura GitHub page](https://github.com/hasura/graphql-engine).
 
 ![screenshots/Screenshot_2020-12-29_at_12.09.30_AM.png](screenshots/Screenshot_2020-12-29_at_12.09.30_AM.png)
 
-After setting up Hasura on Heroku open the Heroku app to see the Hasura Console. 
+After setting up Hasura on Heroku open the Heroku app to see the Hasura Console.
 
 ![screenshots/Screenshot_2020-12-29_at_12.14.41_AM.png](screenshots/Screenshot_2020-12-29_at_12.14.41_AM.png)
 
@@ -51,11 +51,11 @@ $ npm install --global hasura-cli
 $ hasura --help
 ```
 
-To apply migration to Postgres DB navigate to `/hasura` directory and enter below commands.
+To apply migration to Postgres DB navigate to `/hasura` directory of `telebooth-server` repo and enter below commands.
 
 ```jsx
 // Update endpoint param with your's endpoint value.
-$ cd harsura/
+$ cd hasura/
 $ hasura migrate apply --admin-secret "${admin_secret}" --endpoint https://telebooth.herokuapp.com
 // If it is successfully done, you'll get message
 INFO migrations applied
@@ -65,22 +65,22 @@ On your Hasura console you'll see all these tables as below
 
 ![screenshots/Screenshot_2020-12-29_at_12.24.37_AM.png](screenshots/Screenshot_2020-12-29_at_12.24.37_AM.png)
 
-To access the Hasura server using the web client the user needs to authenticate themselves using JWT token. 
+To access the Hasura server using the web client the user needs to authenticate themselves using JWT token.
 
-Please setup JWT authentication for your Hasura endpoint as per the instructions given here: 
-[https://hasura.io/docs/1.0/graphql/core/guides/integrations/auth0-jwt.html](https://hasura.io/docs/1.0/graphql/core/guides/integrations/auth0-jwt.html) 
+Please setup JWT authentication for your Hasura endpoint as per the instructions given here:
+[https://hasura.io/docs/1.0/graphql/core/guides/integrations/auth0-jwt.html](https://hasura.io/docs/1.0/graphql/core/guides/integrations/auth0-jwt.html)
 
-Please add the relevant env variables as Heroku config vars instead of Hasura Cloud console. 
+Please add the relevant env variables as Heroku config vars instead of Hasura Cloud console.
 
-We need to now configure Auth0 rule to disable new Sign-ups and only allow a predefined user. 
+We need to now configure Auth0 rule to disable new Sign-ups and only allow a predefined user.
 
-Please go to the Auth0 dashboard [https://manage.auth0.com/dashboard](https://manage.auth0.com/dashboard) and go to Rules section. 
+Please go to the Auth0 dashboard [https://manage.auth0.com/dashboard](https://manage.auth0.com/dashboard) and go to Rules section.
 
 Click on +Create Rule
 
 ![screenshots/Screenshot_2020-12-29_at_12.40.20_AM.png](screenshots/Screenshot_2020-12-29_at_12.40.20_AM.png)
 
-Choose the `empty rule` option and add the following rule. Add the email-ids that you want to give access to your app. 
+Choose the `empty rule` option and add the following rule. Add the email-ids that you want to give access to your app.
 
 ```bash
 function (user, context, callback) {
@@ -95,7 +95,7 @@ function (user, context, callback) {
 
 ```
 
-Save the rule. The app should now be accessible only by select users at your organization. 
+Save the rule. The app should now be accessible only by select users at your organization.
 
 ### Create Telegram Bot
 
@@ -133,11 +133,11 @@ HASURA_ADMIN_SECRET={adminSecret}
 
 Now let's deploy the telebooth-server on Heroku. (You may also choose to deploy on any other cloud provider)
 
-The telebooth-server already has a Procfile required for the Heroku deploy. Please follow the instructions given here to deploy the server on Heroku.  [https://devcenter.heroku.com/articles/getting-started-with-nodejs](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+The telebooth-server already has a Procfile required for the Heroku deploy. Please follow the instructions given here to deploy the server on Heroku. [https://devcenter.heroku.com/articles/getting-started-with-nodejs](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
-Now let's deploy our telebooth client to either Netlify or Github. 
+Now let's deploy our telebooth client to either Netlify or Github.
 
-[https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/) OR 
+[https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/) OR
 [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages)
 
 You should now be able to use the application by logging into your client. We recommend signing-in with Google using the same account that you had added to the Auth0 rule.
