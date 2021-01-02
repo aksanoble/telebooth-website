@@ -22,7 +22,7 @@ module.exports = {
       title: "Telebooth",
       logo: {
         alt: "Telebooth Logo",
-        src: "img/just-logo.svg"
+        src: "img/logo.png"
       },
       items: [
         {
