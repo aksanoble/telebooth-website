@@ -4,13 +4,13 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Image from "@theme/IdealImage";
 import Footer from "@theme/Footer";
+
 import styles from "./index.module.css";
 import { Live } from "../components/live";
 import { Contact } from "../components/contact";
 import { Feature } from "../components/feature";
 import { Highlights } from "../components/highlights";
 import { Nav } from "../components/nav";
-// import RealTimeUpdateImage from "../../static/img/realtime-telebooth-640.gif";
 
 const Header = () => {
   return (
@@ -36,7 +36,7 @@ const Header = () => {
         <div className='cover-section'>
           <img
             style={{height: 350}}
-            src="../../static/img/cover.svg"
+            src="/img/cover.svg"
             alt="GitHub App and Action"
           />
         </div>
@@ -84,7 +84,7 @@ function Index() {
             ),
             img: (
               <img
-                src="../../static/img/own-data.svg"
+                src="/img/own-data.svg"
                 alt="GitHub App and Action"
               />
             )
@@ -107,7 +107,7 @@ function Index() {
             ),
             img: (
               <img
-                src="../../static/img/open-source.svg"
+                src="/img/open-source.svg"
                 alt="Entirely Open-Source"
               />
             )
@@ -116,23 +116,24 @@ function Index() {
       />
 
       <div className='image-container'>
-        <img src={'../../static/img/realtime-telebooth-640.gif'} alt="realtime image" />
+        <img src={'/img/realtime-telebooth-640.gif'} alt="realtime image" />
       </div>
 
       <Feature
         img={
           <img
-            src="../../static/img/coming-soon.svg"
+            src="/img/coming-soon.svg"
             alt="Notifications"
             style={{height: 150}}
           />
         }
         title="Coming soon"
         text={
-          <>
-            Bulk send —> Sending bulk messages to unlimited contacts. <br />
-            Automated replies
-          </>
+          <ul>
+            <li>Broadcast messages to unlimited contacts</li>
+            <li>Canned responses</li>
+            <li>Support for multimedia messages</li>
+          </ul>
         }
       />
 

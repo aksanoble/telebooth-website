@@ -107,7 +107,7 @@ export const Contact = () => {
           </div>
           <div className={styles.contactMailBox}>
             <img
-              src="../../static/img/get-in-touch.svg"
+              src="/img/get-in-touch.svg"
               alt="Mail Box"
               loading="lazy"
             />

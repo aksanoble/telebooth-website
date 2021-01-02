@@ -6,7 +6,7 @@ export const Nav = ({ link }) => {
   return (
     <div id="main-nav">
       <a href="/" className="logo">
-        Telebooth
+        <img src="/img/logo.png" style={{width: 48, height: 48}} />
       </a>
       <div className="links">
         <div className="sep" />
