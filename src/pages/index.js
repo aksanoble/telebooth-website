@@ -16,14 +16,14 @@ const Header = () => {
   return (
     <div id="main-header">
       <div className="top-section">
-        <div className='intro-section'>
+        <div className="intro-section">
           <h1>
-            <span>The telegram bot client.</span>
+            <span>Free and open source customer support on Telegram </span>
             <br />
           </h1>
           <h2>
-            Create virtual bot identities for your business and interact with your
-            customers.
+            Reach your customers directly on Telegram with your Telegram
+            business identity. No limits on messages or contacts.
           </h2>
           <Link
             to="/docs"
@@ -33,9 +33,9 @@ const Header = () => {
             GET STARTED
           </Link>
         </div>
-        <div className='cover-section'>
+        <div className="cover-section">
           <img
-            style={{height: 350}}
+            style={{ height: 350 }}
             src="/img/cover.svg"
             alt="GitHub App and Action"
           />
@@ -77,17 +77,12 @@ function Index() {
             title: "Own your data",
             text: (
               <p>
-                Directly create a new bot with Telegram and connect with
-                Telebooth. No vendor lock-in. You fully own your bot identity as
-                well as all of your contacts and messages.
+                Directly connect your business Telegram account with Telebooth.
+                No vendor lock-in. You fully own your bot identity as well as
+                all of your contacts and messages.
               </p>
             ),
-            img: (
-              <img
-                src="/img/own-data.svg"
-                alt="GitHub App and Action"
-              />
-            )
+            img: <img src="/img/own-data.svg" alt="GitHub App and Action" />
           },
           {
             title: "Free and Open Source",
@@ -105,18 +100,13 @@ function Index() {
                 Source code
               </a>
             ),
-            img: (
-              <img
-                src="/img/open-source.svg"
-                alt="Entirely Open-Source"
-              />
-            )
+            img: <img src="/img/open-source.svg" alt="Entirely Open-Source" />
           }
         ]}
       />
 
-      <div className='image-container'>
-        <img src={'/img/realtime-telebooth-640.gif'} alt="realtime image" />
+      <div className="image-container">
+        <img src={"/img/realtime-telebooth-640.gif"} alt="realtime image" />
       </div>
 
       <Feature
@@ -124,7 +114,7 @@ function Index() {
           <img
             src="/img/coming-soon.svg"
             alt="Notifications"
-            style={{height: 150}}
+            style={{ height: 150 }}
           />
         }
         title="Coming soon"
