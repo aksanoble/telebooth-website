@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
   title: "Telebooth",
-  tagline:
-    "Create virtual bot identities for your business and interact with your customers. ",
+  tagline: "Open source customer support built on Telegram",
 
   url: "https://telebooth.kanthi.io",
   baseUrl: "/",
@@ -66,8 +65,8 @@ module.exports = {
         }
       ]
     },
-    googleAnalytics: {
-      trackingID: "G-ZBQ0VZFXLH"
+    gtag: {
+      trackingID: "G-C7TH3W4JV3"
     }
   },
   scripts: [
@@ -109,12 +108,6 @@ module.exports = {
         quality: 100
       }
     ],
-    path.join(__dirname, "/plugins/monaco-editor"),
-    [
-      require.resolve("docusaurus-gtm-plugin"),
-      {
-        id: "G-ZBQ0VZFXLH"
-      }
-    ]
+    path.join(__dirname, "/plugins/monaco-editor")
   ]
 };
